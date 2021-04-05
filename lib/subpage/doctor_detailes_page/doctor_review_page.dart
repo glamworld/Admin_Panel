@@ -444,7 +444,7 @@ class ReviewTile extends StatelessWidget {
                     padding:
                     const EdgeInsets.only(top: 5, bottom: 5),
                     width: size.width * .47,
-                    height: size.width * .10,
+                    //height: size.width * .10,
                     //color: Colors.blue,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -474,7 +474,7 @@ class ReviewTile extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 5, bottom: 5),
                     //color: Colors.green,
                     width: size.width * .25,
-                    height: size.width * .10,
+                    //height: size.width * .10,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [

@@ -81,7 +81,7 @@ class _UpdateFAQState extends State<UpdateFAQ> {
           _textFormBuilder("What are ${operation.doctorList[0].fullName}'s speciality interest?",8,operation),
           _textFormBuilder('Where can I consult with ${operation.doctorList[0].fullName}?',9,operation),
           _textFormBuilder('What societies is ${operation.doctorList[0].fullName} a member of?',10,operation),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Container(
               margin: EdgeInsets.only(left: 10,right:10),
               child: InkWell(
@@ -104,8 +104,8 @@ class _UpdateFAQState extends State<UpdateFAQ> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('$serialNo. $question',style: TextStyle(color: Colors.grey[800]),),
-          SizedBox(height: 5),
+          Text('$serialNo. $question',style: TextStyle(color: Colors.grey[800],fontSize: MediaQuery.of(context).size.width * .040),),
+          SizedBox(height: 10),
           TextFormField(
             controller: serialNo==1? one:serialNo==2? two:serialNo==3? three:serialNo==4? four:serialNo==5? five
                 :serialNo==6? six:serialNo==7? seven:serialNo==8? eight:serialNo==9? nine:ten,

@@ -51,6 +51,7 @@ class MedicineDetails extends StatefulWidget {
 }
 
 class _MedicineDetailsState extends State<MedicineDetails> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +100,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
         child: Column(children: [
           //Header...
           Container(
-            height: size.height * .18,
+            height: size.height * .19,
             width: size.width,
             color: Theme.of(context).primaryColor,
             child: ListTile(
@@ -110,7 +111,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                     widget.name,
                     maxLines: 1,
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: size.width * .060,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -120,7 +121,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                     child: Text(
                       widget.strength,
                       maxLines: 1,
-                      style: TextStyle(fontSize: 12, color: Colors.white),
+                      style: TextStyle(fontSize: size.width * .040, color: Colors.white),
                     ),
                   )
                 ],
@@ -132,28 +133,28 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                     widget.genericName,
                     maxLines: 1,
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: size.width * .045,
                         color: Colors.white,
                         fontStyle: FontStyle.italic),
                   ),
                   Text(
                     widget.dosage,
                     maxLines: 1,
-                    style: TextStyle(fontSize: 14, color: Colors.white),
+                    style: TextStyle(fontSize: size.width * .045, color: Colors.white),
                   ),
                   SizedBox(height: 5),
                   Text(
                     '৳ ${widget.price}',
                     maxLines: 1,
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    style: TextStyle(fontSize: size.width * .048, color: Colors.white),
                   ),
-                  SizedBox(height: 5),
+                  //SizedBox(height: 5),
                   Text(
                     widget.manufacturer,
                     maxLines: 1,
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                    style: TextStyle(fontSize: size.width * .050, color: Colors.white),
                   ),
-                  //SizedBox(height: 5),
+                  //SizedBox(height: 15),
                 ],
               ),
             ),
@@ -176,7 +177,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                         widget.pregnancy,
                         widget.therapeutic,
                         widget.modeOfAction,
-                        widget.interaction)[index]);
+                        widget.interaction)[index],context);
                   }))
         ]));
   }
@@ -186,15 +187,15 @@ class _MedicineDetailsState extends State<MedicineDetails> {
 // ignore: must_be_immutable
 class EntryItemTile extends StatelessWidget {
   final Entry entry;
-
-  EntryItemTile(this.entry);
+  BuildContext context;
+  EntryItemTile(this.entry,this.context);
 
   Widget _buildTiles(Entry root) {
     if (root.children.isEmpty) {
       return ListTile(
         title: Text(
           root.title,
-          style: TextStyle(color: Colors.grey[800], fontSize: 12),
+          style: TextStyle(color: Colors.grey[800], fontSize: MediaQuery.of(context).size.width * .040),
         ),
       );
     }
@@ -204,7 +205,7 @@ class EntryItemTile extends StatelessWidget {
       //tilePadding: EdgeInsets.all(0.0),
       title: Text(
         root.title,
-        style: TextStyle(fontSize: 14),
+        style: TextStyle(fontSize: MediaQuery.of(context).size.width * .043),
       ),
       children: root.children.map<Widget>(_buildTiles).toList(),
     );

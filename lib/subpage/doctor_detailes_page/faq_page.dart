@@ -3,7 +3,6 @@ import 'package:admin_panel/subpage/doctor_detailes_page/update_faq_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:admin_panel/utils/static_variable_page.dart';
-import 'package:admin_panel/providers/firebase_operation_provider.dart';
 
 class FAQPage extends StatefulWidget {
   String id;
@@ -27,7 +26,7 @@ class _FAQPageState extends State<FAQPage> {
           body: ListView.builder(
             itemCount: faqDataList(operation).length,
             itemBuilder: (context, index) => EntryItemTile(
-              faqDataList(operation)[index],
+              faqDataList(operation)[index],context,
             ),
           ),
 
@@ -47,18 +46,18 @@ class _FAQPageState extends State<FAQPage> {
 ///Create the widget for the row...
 class EntryItemTile extends StatelessWidget {
   final Entry entry;
-
-  const EntryItemTile(this.entry);
+  BuildContext context;
+  EntryItemTile(this.entry,this.context);
 
   Widget _buildTiles(Entry root) {
     if (root.children.isEmpty) {
       return ListTile(
-        title: Text(root.title,style: TextStyle(color: Colors.grey[800]),),
+        title: Text(root.title,style: TextStyle(color: Colors.grey[800],fontSize: MediaQuery.of(context).size.width * .032),),
       );
     }
     return ExpansionTile(
       key: PageStorageKey<Entry>(root),
-      title: Text(root.title,style: TextStyle(fontWeight: FontWeight.w500),),
+      title: Text(root.title,style: TextStyle(fontWeight: FontWeight.w500,fontSize: MediaQuery.of(context).size.width * .040),),
       children: root.children.map<Widget>(_buildTiles).toList(),
     );
   }
