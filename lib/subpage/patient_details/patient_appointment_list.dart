@@ -89,7 +89,7 @@ class PatientAppointBuildersTile extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.only(left: 10,right:5,top: 5,bottom: 5),
             margin: EdgeInsets.only(left: 5,right: 5,bottom: 5),
-            height: size.width * .26, //     color: Color(0xffF4F7F5),
+            height: size.width * .27, //     color: Color(0xffF4F7F5),
             decoration: simpleCardDecoration,
 
             child: Row(

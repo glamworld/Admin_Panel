@@ -67,7 +67,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
       child: AppBar(
         title: Text(
           widget.name,
-          style: TextStyle(color: Colors.black, fontSize: 15),
+          style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.width*.050),
         ),
         //centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
@@ -100,7 +100,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
         child: Column(children: [
           //Header...
           Container(
-            height: size.height * .19,
+            height: size.width * .36,
             width: size.width,
             color: Theme.of(context).primaryColor,
             child: ListTile(
