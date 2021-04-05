@@ -147,7 +147,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             style:
                             TextStyle(fontSize: size.width*.06, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: size.width / 15),
+                          SizedBox(height: size.width / 22),
 
                       Text('${widget.degree == null ? ' ' : widget.degree}',
                           maxLines: 3,

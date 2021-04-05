@@ -66,7 +66,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
       preferredSize: Size.fromHeight(90),
       child: AppBar(
         title: Text(
-          widget.name,
+          widget.name??'',
           style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.width*.050),
         ),
         //centerTitle: true,
@@ -108,7 +108,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    widget.name,
+                    widget.name??'',
                     maxLines: 1,
                     style: TextStyle(
                         fontSize: size.width * .060,
@@ -119,7 +119,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 2),
                     child: Text(
-                      widget.strength,
+                      widget.strength??'',
                       maxLines: 1,
                       style: TextStyle(fontSize: size.width * .040, color: Colors.white),
                     ),
@@ -130,7 +130,7 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.genericName,
+                    widget.genericName??'',
                     maxLines: 1,
                     style: TextStyle(
                         fontSize: size.width * .045,
@@ -138,19 +138,19 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                         fontStyle: FontStyle.italic),
                   ),
                   Text(
-                    widget.dosage,
+                    widget.dosage??'',
                     maxLines: 1,
                     style: TextStyle(fontSize: size.width * .045, color: Colors.white),
                   ),
                   SizedBox(height: 5),
                   Text(
-                    '৳ ${widget.price}',
+                    '৳ ${widget.price}'??'',
                     maxLines: 1,
                     style: TextStyle(fontSize: size.width * .048, color: Colors.white),
                   ),
                   //SizedBox(height: 5),
                   Text(
-                    widget.manufacturer,
+                    widget.manufacturer??'',
                     maxLines: 1,
                     style: TextStyle(fontSize: size.width * .050, color: Colors.white),
                   ),
@@ -166,18 +166,18 @@ class _MedicineDetailsState extends State<MedicineDetails> {
                   itemCount: 12,
                   itemBuilder: (context, index) {
                     return EntryItemTile(medicineDataList(
-                        widget.indications,
-                        widget.adultDose,
-                        widget.childDose,
-                        widget.renalDose,
-                        widget.administration,
-                        widget.contradiction,
-                        widget.sideEffect,
-                        widget.precautions,
-                        widget.pregnancy,
-                        widget.therapeutic,
-                        widget.modeOfAction,
-                        widget.interaction)[index],context);
+                        widget.indications??'',
+                        widget.adultDose??'',
+                        widget.childDose??'',
+                        widget.renalDose??'',
+                        widget.administration??'',
+                        widget.contradiction??'',
+                        widget.sideEffect??'',
+                        widget.precautions??'',
+                        widget.pregnancy??'',
+                        widget.therapeutic??'',
+                        widget.modeOfAction??'',
+                        widget.interaction??'')[index],context);
                   }))
         ]));
   }
